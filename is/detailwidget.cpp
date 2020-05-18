@@ -1,5 +1,7 @@
 #include "detailwidget.h"
 #include "ui_detailwidget.h"
+#include <QMessageBox>
+#include <QPushButton>
 
 DetailWidget::DetailWidget(Database &db, Detail detail, QWidget *parent) :
     QWidget(parent),
@@ -36,4 +38,15 @@ DetailWidget::DetailWidget(Database &db, Detail detail, QWidget *parent) :
 DetailWidget::~DetailWidget()
 {
     delete ui;
+}
+
+void DetailWidget::on_DeleteButton_clicked()
+{
+    auto confirm = QMessageBox::question(this, "Удалить деталь?", detail.name, QMessageBox::Yes | QMessageBox::No);
+
+    if (confirm == QMessageBox::Yes)
+    {
+        db.details.Delete(detail);
+        emit onDetailChanged(this);
+    }
 }

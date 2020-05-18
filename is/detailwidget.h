@@ -18,6 +18,9 @@ public:
 signals:
     void onDetailChanged(DetailWidget *sender);
 
+private slots:
+    void on_DeleteButton_clicked();
+
 private:
     Ui::DetailWidget *ui;
     Database &db;
