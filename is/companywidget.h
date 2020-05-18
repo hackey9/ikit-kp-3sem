@@ -21,6 +21,8 @@ signals:
 private slots:
     void on_EditButton_clicked();
 
+    void on_DeleteButton_clicked();
+
 private:
     Ui::CompanyWidget *ui;
     Database &db;
