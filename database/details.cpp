@@ -34,6 +34,32 @@ Detail Details::Get(QUuid id) const
     throw 0;
 }
 
+QVector<Detail> Details::Search(QString searchString) const
+{
+    QVector<Detail> results;
+    auto searchTokens = searchString.split(" ");
+
+    for (const auto &item : items)
+    {
+        bool found = false;
+        QString itemToken = item.code + " " + item.name;
+
+        for (const auto &token : searchTokens)
+        {
+           if (itemToken.indexOf(token, 0, Qt::CaseSensitivity::CaseInsensitive) != -1)
+           {
+               found = true;
+               break;
+           }
+        }
+
+        if (found) {
+            results.push_back(item);
+        }
+    }
+    return results;
+}
+
 bool Details::Insert(const Detail &new_item)
 {
     for(const Detail &item : items)

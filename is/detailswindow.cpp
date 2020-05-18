@@ -21,7 +21,17 @@ void DetailsWindow::updateItems()
         item->widget()->deleteLater();
     }
 
-    QVector<Detail> details = db.details.All();
+    QVector<Detail> details;
+    QString search = ui->SearchInput->text().trimmed();
+    if (search == "") {
+        details = db.details.All();
+    } else {
+        details = db.details.Search(search);
+    }
+
+    qSort(details.begin(), details.end(), [](const Detail &left, const Detail &right) {
+        return QString::compare(left.code, right.code, Qt::CaseSensitivity::CaseInsensitive);
+    });
 
     for (Detail &detail : details)
     {
@@ -46,4 +56,14 @@ void DetailsWindow::on_CloseButton_clicked()
 
     MainWindow *window = new MainWindow(db, user);
     window->show();
+}
+
+void DetailsWindow::on_ResetSearchButton_clicked()
+{
+    ui->SearchInput->setText("");
+}
+
+void DetailsWindow::on_SearchInput_textChanged(const QString &)
+{
+    updateItems();
 }

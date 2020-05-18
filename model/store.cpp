@@ -11,3 +11,7 @@ Store::Store(QUuid id, QString address)
       address(address)
 {
 }
+
+Store::Store()
+{
+}

@@ -11,3 +11,7 @@ Detail::Detail(QUuid id, QString code, QString name, QUuid &store_id, QUuid &pro
 {
 
 }
+
+Detail::Detail()
+{
+}

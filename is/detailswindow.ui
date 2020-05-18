@@ -60,7 +60,7 @@
    </widget>
    <widget class="QPushButton" name="ResetSearchButton">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -110,7 +110,7 @@
    </widget>
    <widget class="QLineEdit" name="SearchInput">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -152,6 +152,47 @@
     </property>
     <property name="text">
      <string>Детали и изделия</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>100</y>
+      <width>161</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Как есть</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>По алфавиту (наименование)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>По алфавиту (код)</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>80</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сортировка</string>
     </property>
    </widget>
   </widget>

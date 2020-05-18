@@ -11,3 +11,7 @@ Product::Product(QString code, QString name, QUuid store_id, QList<Detail> detai
     : id(QUuid::createUuid()), code(code), name(name), store_id(store_id), details(details)
 {
 }
+
+Product::Product()
+{
+}

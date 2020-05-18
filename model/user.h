@@ -18,7 +18,7 @@ enum UserGroup : int
 class User
 {
 public:
-
+    User();
     User(QString username, QString password, UserGroup group);
     User(QUuid id, QString username, QString passwordHash, UserGroup group);
 

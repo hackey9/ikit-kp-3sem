@@ -8,6 +8,7 @@ class Store;
 class Store
 {
 public:
+    Store();
     Store(QString address);
     Store(QUuid id, QString address);
 

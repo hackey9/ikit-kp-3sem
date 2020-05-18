@@ -18,10 +18,15 @@ public:
 private slots:
     void on_CloseButton_clicked();
 
+    void on_ResetSearchButton_clicked();
+
+    void on_SearchInput_textChanged(const QString &arg1);
+
 private:
     Ui::DetailsWindow *ui;
     Database &db;
     User user;
+    QVector<Detail> details;
 
     void updateItems();
 };

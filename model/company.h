@@ -9,6 +9,7 @@ class Company;
 class Company
 {
 public:
+    Company();
     Company(QUuid id, QString title, QUuid user_id, QUuid store_id);
     Company(QString title, QUuid user_id, QUuid store_id);
 

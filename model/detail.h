@@ -6,6 +6,7 @@
 class Detail
 {
 public:
+    Detail();
     Detail(QString code, QString name, QUuid &store_id, QUuid &provider_id);
     Detail(QUuid id, QString code, QString name, QUuid &store_id, QUuid &provider_id);
 

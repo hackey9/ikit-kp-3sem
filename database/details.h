@@ -21,6 +21,8 @@ public:
     bool Exists(QUuid id) const;
     Detail Get(QUuid id) const;
 
+    QVector<Detail> Search(QString searchString) const;
+
     bool Insert(const Detail &new_item);
     bool Update(const Detail &updated_item);
     bool Delete(const Detail &deleted_item);

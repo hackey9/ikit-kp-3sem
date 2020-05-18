@@ -30,3 +30,7 @@ QString User::hashPassword(QString password) const
 {
     return QCryptographicHash::hash(password.toUtf8(), QCryptographicHash::Algorithm::Sha256).toHex();
 }
+
+User::User()
+{
+}
