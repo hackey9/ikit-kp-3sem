@@ -4,18 +4,18 @@ class Product;
 
 #include <QUuid>
 #include <QString>
-#include <QVector>
+#include <QList>
 #include "detail.h"
 
 class Product
 {
 public:
-    Product(QUuid id, QString code, QString name, QUuid store_id, QVector<Detail> details);
-    Product(QString code, QString name, QUuid store_id, QVector<Detail> details);
+    Product(QUuid id, QString code, QString name, QUuid store_id, QList<Detail> details);
+    Product(QString code, QString name, QUuid store_id, QList<Detail> details);
 
     QUuid id;
     QString code;
     QString name;
     QUuid store_id;
-    QVector<Detail> details;
+    QList<Detail> details;
 };

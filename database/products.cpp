@@ -155,7 +155,7 @@ void Products::readFromStream(QDataStream &stream)
     QString code;
     QString name;
     QUuid store_id;
-    QVector<Detail> details;
+    QList<Detail> details;
 
     int details_count;
 

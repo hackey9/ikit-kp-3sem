@@ -69,7 +69,7 @@ void ConstructorWindow::on_BuildButton_clicked()
         return;
     }
 
-    if (!db.products.Insert(Product(product_code, product_name, store.id, selectedDetails)))
+    if (!db.products.Insert(Product(product_code, product_name, store.id, selectedDetails.toList())))
     {
         QMessageBox message;
         message.setText("Не удалось создать изделие");
