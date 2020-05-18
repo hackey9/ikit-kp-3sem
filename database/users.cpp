@@ -104,6 +104,9 @@ bool Users::haveUniqueRestriction(const User &left, const User &right, bool comp
             return true;
     }
 
+    if (left.username == right.username)
+        return true;
+
     return false;
 }
 

@@ -118,6 +118,9 @@ bool Companies::haveUniqueRestriction(const Company &left, const Company &right,
             return true;
     }
 
+    if (left.title == right.title)
+        return true;
+
     return false;
 }
 

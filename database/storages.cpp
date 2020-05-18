@@ -104,6 +104,9 @@ bool Storages::haveUniqueRestriction(const Store &left, const Store &right, bool
             return true;
     }
 
+    if (left.address == right.address)
+        return true;
+
     return false;
 }
 
