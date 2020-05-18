@@ -29,9 +29,19 @@ void DetailsWindow::updateItems()
         details = db.details.Search(search);
     }
 
-    qSort(details.begin(), details.end(), [](const Detail &left, const Detail &right) {
-        return QString::compare(left.code, right.code, Qt::CaseSensitivity::CaseInsensitive);
-    });
+    if (ui->SortSelect->currentIndex() == 1)
+    {
+        qSort(details.begin(), details.end(), [](const Detail &left, const Detail &right) {
+
+            return QString::localeAwareCompare(left.name, right.name) < 0;
+        });
+    }
+    else if (ui->SortSelect->currentIndex() == 2)
+    {
+        qSort(details.begin(), details.end(), [](const Detail &left, const Detail &right) {
+            return QString::localeAwareCompare(left.code, right.code) < 0;
+        });
+    }
 
     for (Detail &detail : details)
     {
@@ -64,6 +74,11 @@ void DetailsWindow::on_ResetSearchButton_clicked()
 }
 
 void DetailsWindow::on_SearchInput_textChanged(const QString &)
+{
+    updateItems();
+}
+
+void DetailsWindow::on_SortSelect_currentIndexChanged(int index)
 {
     updateItems();
 }

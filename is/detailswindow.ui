@@ -105,7 +105,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Поиск (по коду, названию, адресу склада, поставщику)</string>
+     <string>Поиск (по коду, названию)</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="SearchInput">
@@ -154,9 +154,9 @@
      <string>Детали и изделия</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="SortSelect">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>

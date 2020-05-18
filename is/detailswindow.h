@@ -22,6 +22,8 @@ private slots:
 
     void on_SearchInput_textChanged(const QString &arg1);
 
+    void on_SortSelect_currentIndexChanged(int index);
+
 private:
     Ui::DetailsWindow *ui;
     Database &db;
