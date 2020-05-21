@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>802</width>
-    <height>89</height>
+    <height>148</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -111,6 +111,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="DeconstructButton">
+       <property name="text">
+        <string>Разобрать</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <spacer name="verticalSpacer">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -155,7 +162,7 @@
         <x>0</x>
         <y>0</y>
         <width>498</width>
-        <height>69</height>
+        <height>128</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2"/>

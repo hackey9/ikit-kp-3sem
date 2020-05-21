@@ -1,6 +1,7 @@
 #include "storagewidget.h"
 #include "ui_storagewidget.h"
 #include "storageeditdialog.h"
+#include <QMessageBox>
 
 StorageWidget::StorageWidget(Database &db, Store store, QWidget *parent) :
     QWidget(parent),
@@ -24,4 +25,13 @@ void StorageWidget::on_EditButton_clicked()
     dialog->show();
 
     QObject::connect(dialog, &StorageEditDialog::onStorageChanged, [=](){ emit onStorageChanged(); });
+}
+
+void StorageWidget::on_pushButton_clicked()
+{
+    if (QMessageBox::question(this, "Удалить склад?", store.address) == QMessageBox::Yes)
+    {
+        db.storages.Delete(store);
+        emit onStorageChanged();
+    }
 }

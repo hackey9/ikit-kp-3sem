@@ -22,6 +22,8 @@ signals:
 private slots:
     void on_EditButton_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::StorageWidget *ui;
     Database &db;

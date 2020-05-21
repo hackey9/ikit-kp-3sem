@@ -1,6 +1,7 @@
 #include "productwidget.h"
 #include "ui_productwidget.h"
 #include "productdetailwidget.h"
+#include <QMessageBox>
 
 ProductWidget::ProductWidget(Database &db, const Product &product, QWidget *parent) :
     QWidget(parent),
@@ -25,4 +26,18 @@ ProductWidget::ProductWidget(Database &db, const Product &product, QWidget *pare
 ProductWidget::~ProductWidget()
 {
     delete ui;
+}
+
+void ProductWidget::on_DeconstructButton_clicked()
+{
+    if (QMessageBox::question(this, "Разобрать изделие?", "Входящие в состав детали будут возвращены на склад.") == QMessageBox::Yes)
+    {
+        for (const Detail &detail : product.details)
+        {
+            db.details.Insert(detail);
+        }
+
+        db.products.Delete(product);
+        emit onProductUpdated();
+    }
 }

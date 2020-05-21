@@ -28,6 +28,10 @@ void ProductsWindow::updateItems()
     {
         ProductWidget *widget = new ProductWidget(db, product, this);
         ui->ScrollAreaContent->layout()->addWidget(widget);
+
+        QObject::connect(widget, &ProductWidget::onProductUpdated, [=](){
+            updateItems();
+        });
     }
 
     ui->ScrollAreaContent->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::MinimumExpanding));

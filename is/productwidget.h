@@ -15,6 +15,12 @@ public:
     explicit ProductWidget(Database &db, const Product &product, QWidget *parent = nullptr);
     ~ProductWidget();
 
+signals:
+    void onProductUpdated();
+
+private slots:
+    void on_DeconstructButton_clicked();
+
 private:
     Ui::ProductWidget *ui;
     Database &db;

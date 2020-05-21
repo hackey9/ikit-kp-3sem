@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>888</width>
+    <width>787</width>
     <height>58</height>
    </rect>
   </property>
@@ -101,7 +101,7 @@
       <widget class="QLabel" name="NameLabel">
        <property name="minimumSize">
         <size>
-         <width>300</width>
+         <width>250</width>
          <height>0</height>
         </size>
        </property>
@@ -132,7 +132,7 @@
     <widget class="QLabel" name="AddressLabel">
      <property name="minimumSize">
       <size>
-       <width>200</width>
+       <width>150</width>
        <height>0</height>
       </size>
      </property>
@@ -163,7 +163,7 @@
     <widget class="QLabel" name="ProviderLabel">
      <property name="minimumSize">
       <size>
-       <width>200</width>
+       <width>150</width>
        <height>0</height>
       </size>
      </property>

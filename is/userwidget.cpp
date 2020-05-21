@@ -1,6 +1,7 @@
 #include "userwidget.h"
 #include "ui_userwidget.h"
 #include "usereditdialog.h"
+#include <QMessageBox>
 
 UserWidget::UserWidget(Database &db, User user, QWidget *parent) :
     QWidget(parent),
@@ -34,4 +35,13 @@ QString UserWidget::groupToText(UserGroup group)
     if (group == Provider) return "Поставщик";
 
     return "Группа не определена";
+}
+
+void UserWidget::on_DeleteButton_clicked()
+{
+    if (QMessageBox::question(this, "Удалить пользователя?", user.username) == QMessageBox::Yes)
+    {
+        db.users.Delete(user);
+        emit onUserUpdated();
+    }
 }
